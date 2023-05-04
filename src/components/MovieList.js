@@ -13,9 +13,7 @@ const MovieList = ({ page, handlePageChange }) => {
     dispatch(fetchMovies(page));
   }, [dispatch, page]);
 
-  const movies = useSelector((state) => state.movies);
-  const loading = useSelector((state) => state.loading);
-  const error = useSelector((state) => state.error);
+  const { loading, movies, error } = useSelector((state) => state);
 
   return (
     loading ? <LoadSpinner /> : error ? <Alert variant="danger">{error}</Alert> :
@@ -57,7 +55,7 @@ const MovieList = ({ page, handlePageChange }) => {
             nextLinkClassName="page-link" // set the class name for the next button link
             breakClassName='page-item'
             breakLinkClassName='page-link'
-            forcePage={page-1}
+            forcePage={page - 1}
           />
         </Row>
       </>

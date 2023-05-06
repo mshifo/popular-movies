@@ -11,7 +11,7 @@ const Movie = () => {
 
   const [movie, setMovie] = useState({});
   useEffect(() => {
-    console.log("apikey = "+ apiKey);
+    //console.log("apikey = "+ apiKey);
     axios
       .get(`https://api.themoviedb.org/3/movie/${param.id}?api_key=${apiKey}&language=en-US`)
       .then((response) => {

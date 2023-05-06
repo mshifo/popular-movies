@@ -4,7 +4,7 @@ import { FETCH_MOVIES_REQUEST, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_FAILURE } from
 const initialState = {
   loading: false,
   movies: [],
-  error: '',
+  error: ''
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const movieReducer = (state = initialState, action) => {
     case FETCH_MOVIES_REQUEST:
       return { ...state, loading: true };
     case FETCH_MOVIES_SUCCESS:
-      return { ...state, loading: false, movies: action.payload, error: '' };
+      return { ...state, loading: false, movies: action.payload, error: ''};
     case FETCH_MOVIES_FAILURE:
       return { ...state, loading: false, movies: [], error: action.payload };
     default:
